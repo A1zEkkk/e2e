@@ -13,12 +13,13 @@ class Settings(BaseSettings):
     PASSWORD: str
     IPADDRESS: str
     DATABASE: str
+    PORT: int
 
 
     model_config = SettingsConfigDict(env_file=DOTENV)
 
     def get_db_url(self):
-        return f"{self.DRIVER}://{self.LOGIN}:{self.PASSWORD}@{self.IPADDRESS}/{self.DATABASE}"
+        return f"{self.DRIVER}://{self.LOGIN}:{self.PASSWORD}@{self.IPADDRESS}:{self.PORT}/{self.DATABASE}"
 
 settings = Settings()
 

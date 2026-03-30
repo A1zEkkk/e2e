@@ -1,6 +1,5 @@
 from http import HTTPStatus
-
-
+from pydantic import BaseModel
 
 class CustomException(Exception):
     status: str
